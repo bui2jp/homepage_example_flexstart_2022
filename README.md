@@ -21,3 +21,8 @@ az storage blob upload-batch -s FlexStart -d '$web' --account-name sakaiinewebst
 ```
 az storage account show -n sakaiinewebstorage001 -g sakaiine-website-rg --query "primaryEndpoints.web" --output tsv
 ```
+
+## w/ React + TypeScript (pwa)
+```
+npx create-react-app my-flexstart-app --template typescript
+```
