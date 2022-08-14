@@ -24,9 +24,14 @@
    */
   const on = (type, el, listener, all = false) => {
     if (all) {
+      console.log("el : " + el);
+      console.log("all : " + all);      
       select(el, all).forEach(e => e.addEventListener(type, listener))
     } else {
-      select(el, all).addEventListener(type, listener)
+      //TODO: エラーになってしまう。。。
+      console.log("el : " + el);
+      console.log("all : " + all);
+      //select(el, all).addEventListener(type, listener)
     }
   }
 
