@@ -22,6 +22,7 @@
   /**
    * Easy event listener function
    */
+  console.log('Easy event listener function');
   const on = (type, el, listener, all = false) => {
     if (all) {
       console.log("el : " + el);
@@ -38,6 +39,7 @@
   /**
    * Easy on scroll event listener 
    */
+   console.log('Easy on scroll event listener');  
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
   }
@@ -45,6 +47,7 @@
   /**
    * Navbar links active state on scroll
    */
+   console.log('Navbar links active state on scroll');    
   let navbarlinks = select('#navbar .scrollto', true)
   const navbarlinksActive = () => {
     let position = window.scrollY + 200
@@ -65,6 +68,7 @@
   /**
    * Scrolls to an element with header offset
    */
+  console.log('Scrolls to an element with header offset');
   const scrollto = (el) => {
     let header = select('#header')
     let offset = header.offsetHeight
@@ -83,6 +87,7 @@
   /**
    * Toggle .header-scrolled class to #header when page is scrolled
    */
+  console.log('Toggle .header-scrolled class to #header when page is scrolled');  
   let selectHeader = select('#header')
   if (selectHeader) {
     const headerScrolled = () => {
@@ -99,6 +104,7 @@
   /**
    * Back to top button
    */
+  console.log('Back to top button');
   let backtotop = select('.back-to-top')
   if (backtotop) {
     const toggleBacktotop = () => {
@@ -115,6 +121,7 @@
   /**
    * Mobile nav toggle
    */
+  console.log('Mobile nav toggle');
   on('click', '.mobile-nav-toggle', function(e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
@@ -163,6 +170,7 @@
   /**
    * Clients Slider
    */
+  console.log('Clients Slider');
   new Swiper('.clients-slider', {
     speed: 400,
     loop: true,
@@ -199,6 +207,7 @@
   /**
    * Porfolio isotope and filter
    */
+  console.log('Porfolio isotope and filter');
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
