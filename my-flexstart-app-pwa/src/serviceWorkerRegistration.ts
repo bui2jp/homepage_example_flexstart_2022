@@ -1,4 +1,3 @@
-console.log('serviceWorkerRegistration.ts start...');
 // This optional code is used to register a service worker.
 // register() is not called by default.
 
@@ -25,7 +24,6 @@ type Config = {
 };
 
 export function register(config?: Config) {
-  console.log('register start...');
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);

@@ -13,7 +13,7 @@ import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
-console.log('service-worker.ts start...');
+
 declare const self: ServiceWorkerGlobalScope;
 
 clientsClaim();
@@ -78,31 +78,3 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
-
-self.addEventListener('install', (e) => {
-  console.log('[Service Worker] Install');
-});
-
-// self.addEventListener('fetch', (e) => {
-//   console.log('[Service Worker] Fetched resource '+e.request.url);
-// });
-var cacheName = 'my-cacheName';
-self.addEventListener('fetch', (e) => {
-  console.log('[Service Worker] Fetched resource '+e.request.url);  
-  e.respondWith(
-    caches.match(e.request).then((r) => {
-          console.log('[Service Worker] Fetching resource: '+e.request.url);
-      return r || fetch(e.request).then((response) => {
-                return caches.open(cacheName).then((cache) => {
-          console.log('[Service Worker] Caching new resource: '+e.request.url);
-          cache.put(e.request, response.clone());
-          return response;
-        });
-      });
-    })
-  );
-});
-
-self.addEventListener('activate', (e) => {
-  console.log('[Service Worker] Activate');
-});
